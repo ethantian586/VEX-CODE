@@ -206,7 +206,7 @@ void initialize() {
                 else if (intakeTime > 0 && top == 5){
                     firststage.move(127);
                     secondstage.move(-10);
-                    roller.move(60);
+                    roller.move(100);
                     intakeTime-=10;
                 }           
                 else{
@@ -576,7 +576,7 @@ void skills(){
     //pros::delay(50);
     chassis.setPose(chassis.getPose().x, 72-get_dist_to_wall(left.get(), leftSensorConfig, chassis.getPose().theta), chassis.getPose().theta);
     chassis.moveToPoint(20, 49.25, 800, {.forwards = false, .maxSpeed = 80});
-    chassis.turnToHeading(-270, 200);
+    chassis.turnToHeading(-270, 100);
     moveStraight(-8, 2000, {.maxSpeed = 127});
 
 
@@ -590,10 +590,10 @@ void skills(){
     matchloader.set_value(true);   
     chassis.moveToPoint(29.5, 0, 800, {.maxSpeed = 60});
     //chassis.waitUntilDone();
-    moveStraight(6000, 1850, {.maxSpeed = 30});
+    moveStraight(6000, 2000, {.maxSpeed = 30});
     //pros::delay(1500); 
     chassis.moveToPoint(-2, -0.25, 1200, {.forwards = false, .maxSpeed = 100});
-    chassis.turnToHeading(90, 200);
+    chassis.turnToHeading(90, 100);
     matchloader.set_value(false);
     moveStraight(-8, 2000, {.maxSpeed = 127});
     top = 1;
@@ -608,7 +608,7 @@ void skills(){
     top = 0;
     chassis.swingToHeading(160, lemlib::DriveSide::RIGHT, 400);
     chassis.turnToHeading(160, 200);
-    moveStraight(2000, 600, {.maxSpeed = 127});
+    moveStraight(2000, 700, {.maxSpeed = 127});
     chassis.waitUntilDone();
         while (front.get() > 900){
         chassis.tank(95, 100);
@@ -678,7 +678,7 @@ void skills(){
     chassis.setPose(72-(get_dist_to_wall(front.get(), frontSensorConfig, chassis.getPose().theta)), -(72-(get_dist_to_wall(right.get(), rightSensorConfig, chassis.getPose().theta))), chassis.getPose().theta);
     matchloader.set_value(false);
 
-    chassis.moveToPoint(-36, -67, 3000, {.forwards = false, .minSpeed = 1});
+    chassis.moveToPoint(-30, -67, 3000, {.forwards = false, .minSpeed = 1});
     chassis.turnToHeading(0, 800);
     moveStraight(9, 1000,{.maxSpeed = 127});
     chassis.turnToHeading(-90, 800);
@@ -686,7 +686,7 @@ void skills(){
    // pros::delay(50);
     chassis.setPose(chassis.getPose().x, -(72-(get_dist_to_wall(left.get(), leftSensorConfig, chassis.getPose().theta))), chassis.getPose().theta);
     chassis.moveToPoint(-5, -54, 800, {.forwards = false});
-    chassis.turnToHeading(-90, 200);
+    chassis.turnToHeading(-90, 100);
     moveStraight(-8, 2000, {.maxSpeed = 127});
 
 
@@ -701,7 +701,7 @@ void skills(){
     chassis.waitUntilDone();
     moveStraight(1000, 1000, {.maxSpeed = 40});  
     chassis.moveToPoint(2, -0.25, 1500, {.forwards = false, .maxSpeed = 75});
-    chassis.turnToHeading(-90, 200);
+    chassis.turnToHeading(-90, 100);
     matchloader.set_value(false);   
     moveStraight(-8, 2000, {.maxSpeed = 127});
     top = 1;
@@ -715,7 +715,7 @@ void skills(){
         chassis.moveToPoint(-33, 25, 2500, {.maxSpeed = 80, .minSpeed = 1});
     chassis.swingToHeading(0 , lemlib::DriveSide::RIGHT, 300);
     //chassis.turnToHeading(-20, 100)   
-    moveStraight(200, 900, {.maxSpeed = 127});
+    moveStraight(200, 800, {.maxSpeed = 127});
 
 
     
