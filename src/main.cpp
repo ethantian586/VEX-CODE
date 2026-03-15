@@ -563,53 +563,48 @@ void skills(){
     matchloader.set_value(false);              
     antiJam = false;
     chassis.setPose(0,0, 90);
+    //get 1 more red from first 4 stack
     chassis.moveToPoint(30, 2, 3000, {.maxSpeed = 80});
     chassis.waitUntil(23.5);
     top = 8;
     chassis.turnToHeading(-42, 600);
-    //pros::delay(1000000);
+
     chassis.moveToPoint(37, -8.0, 800, {.forwards = false});
     top = 7;
+    //score middle
     moveStraight(-10, 200, {.maxSpeed = 40});
     chassis.turnToHeading(-45, 250);
 
     ramp.set_value(true);
-    //idk.set_value(false);
+
     chassis.waitUntilDone();
-   // top = 5;
-    // pros::delay(10000000000);
 
     top = 5;
     pros::delay(1000);
         matchloader.set_value(true);
         ramp.set_value(false);
-
+    // go loader
     chassis.moveToPoint(-1.6, 31.34, 1500);
     top = 1;
     chassis.turnToHeading(-90, 600);
     chassis.waitUntilDone();
-    //pros::delay(50);
+
     chassis.setPose((72-(get_dist_to_wall(front.get(), frontSensorConfig, chassis.getPose().theta))), 72-(get_dist_to_wall(right.get(), rightSensorConfig, chassis.getPose().theta)), chassis.getPose().theta);
-    //chassis.setPose(72-(left.get()/25.4), 72-(front.get()/25.4), chassis.getPose().theta);
+
    
     top = 0;
     ramp.set_value(false);
     chassis.moveToPoint(25, 48.5, 800, {.maxSpeed = 58});
 
-    //pros::delay(10000000000);
-    
-   
-
-       // chassis.waitUntilDone();
-    //pros::delay(150);
     chassis.turnToHeading(-90, 200);
     moveStraight(2, 1100, {.maxSpeed = 40});
     //
     pros::delay(1300);
+    //alley
     chassis.moveToPoint(48, 66, 550, {.forwards = false, .minSpeed = 1});
     chassis.turnToHeading(-90, 800);
     chassis.waitUntilDone();
-    //pros::delay(50);  
+  
     chassis.setPose(-(72-(get_dist_to_wall(front.get(), frontSensorConfig, chassis.getPose().theta))), 72-(get_dist_to_wall(right.get(), rightSensorConfig, chassis.getPose().theta)), chassis.getPose().theta);
     matchloader.set_value(false);
     chassis.moveToPoint(30, 68, 3000, {.forwards = false, .minSpeed = 1});
@@ -617,9 +612,10 @@ void skills(){
     moveStraight(9, 1000,{.maxSpeed = 40});  
     chassis.turnToHeading(90, 800);
     chassis.waitUntilDone();
-    //pros::delay(50);
+
     chassis.setPose(chassis.getPose().x, 72-get_dist_to_wall(left.get(), leftSensorConfig, chassis.getPose().theta), chassis.getPose().theta);
     chassis.moveToPoint(20, 49.25, 800, {.forwards = false, .maxSpeed = 80});
+    // long score
     chassis.turnToHeading(-270, 100);
     moveStraight(-8, 2000, {.maxSpeed = 127});
 
@@ -630,19 +626,20 @@ void skills(){
     top = 0;
     chassis.turnToHeading(-270, 200);
     chassis.resetLocalPosition();  
-  //  pros::delay(10000000000);
+
     matchloader.set_value(true);   
+    //loader
     chassis.moveToPoint(29.5, 0, 800, {.maxSpeed = 58});
-    //chassis.waitUntilDone();
+
     moveStraight(6000, 2000, {.maxSpeed = 30});
-    //pros::delay(1500); 
+
     chassis.moveToPoint(-2, -0.25, 1200, {.forwards = false, .maxSpeed = 110});
     chassis.turnToHeading(90, 100);
     matchloader.set_value(false);
     moveStraight(-8, 2000, {.maxSpeed = 127});
     top = 1;
     pros::delay(2000);
-   // top = 0;
+   //score long
     chassis.waitUntilDone();
     chassis.turnToHeading(90, 100);
     chassis.resetLocalPosition();
@@ -650,8 +647,7 @@ void skills(){
     moveStraight(-100, 600, {.maxSpeed = 127});
     chassis.waitUntilDone();
     chassis.resetLocalPosition();
-    //pros::delay(1000000);
-    //moveStraight(3, 500, {.maxSpeed = 127, .minSpeed = 1});
+    //go to park
     chassis.moveToPoint(33, -25, 2500, {.maxSpeed = 80});
     top = 1;
     chassis.swingToHeading(160, lemlib::DriveSide::RIGHT, 400);
@@ -665,11 +661,11 @@ void skills(){
             matchloader.set_value(true);
         }
     }  
-    //chassis.driveToHeading(-20, 180, 300);
+    
     chassis.moveToPose(chassis.getPose().x, chassis.getPose().y+15, 180, 800, {.forwards = false, .lead = 0.1});
         chassis.turnToHeading(180, 800);
         chassis.waitUntilDone();
-       // pros::delay(50);
+
         chassis.setPose(72-(get_dist_to_wall(left.get(), leftSensorConfig, chassis.getPose().theta)), chassis.getPose().y, chassis.getPose().theta);
         
         chassis.turnToHeading(270, 800);
@@ -678,41 +674,40 @@ void skills(){
     matchloader.set_value(false);
     chassis.turnToHeading(270, 800);
     chassis.waitUntilDone(); 
-   // pros::delay(50);  
+ 
     chassis.setPose(chassis.getPose().x, -(72-(get_dist_to_wall(left.get(), leftSensorConfig, chassis.getPose().theta))), chassis.getPose().theta);
-    //pros::delay(10000000000);
+    //+1 ball from 4 stack
     chassis.moveToPoint(31, -19.5, 2000);
     chassis.turnToHeading(90, 900);
     chassis.waitUntilDone();
         chassis.setPose(72-(get_dist_to_wall(front.get(), frontSensorConfig, chassis.getPose().theta)),chassis.getPose().y, chassis.getPose().theta);
     chassis.moveToPoint(18.75, -14.5, 2000, {.forwards = false});
     chassis.turnToHeading(135, 400);
+    //score middle
    
     moveStraight(-20, 400, {.maxSpeed = 50});
     chassis.waitUntilDone();
-    //chassis.turnToHeading(135, 400);
+
     ramp.set_value(true);
-    //idk.set_value(false);   
-    //pros::delay(200);
-    //chassis.waitUntilDone();
+
     top = 4;
     
-    //top = 5;
+
     pros::delay(2700);
         chassis.turnToHeading(135, 800);
-        //moveStraight(-2, 200, {.maxSpeed = 40});
+    //go loader
 
     chassis.moveToPoint(46.3, -45.5, 2000);
     chassis.turnToHeading(90, 800);
     matchloader.set_value(true);  
     ramp.set_value(false);
         top = 1;
-    //top = 0;
+
     chassis.waitUntilDone();
-    //pros::delay(50);
+
         chassis.setPose(72-(get_dist_to_wall(front.get(), frontSensorConfig, chassis.getPose().theta)), -(72-(get_dist_to_wall(right.get(), rightSensorConfig, chassis.getPose().theta))), chassis.getPose().theta);
 
-   // pros::delay(10000000000);
+
    top = 0;
     
     chassis.moveToPoint(66, -48, 2000, {.maxSpeed = 50});
@@ -723,20 +718,21 @@ void skills(){
     chassis.turnToHeading(90, 300);
     moveStraight(2000, 300, {.maxSpeed = 40});
     chassis.moveToPoint(37, -68, 600, {.forwards = false});
+    // alley
     chassis.turnToHeading(90, 800);
     chassis.waitUntilDone();
-   // pros::delay(50);
+
     chassis.setPose(72-(get_dist_to_wall(front.get(), frontSensorConfig, chassis.getPose().theta)), -(72-(get_dist_to_wall(right.get(), rightSensorConfig, chassis.getPose().theta))), chassis.getPose().theta);
-    //matchloader.set_value(false);
 
     chassis.moveToPoint(-35, -67, 3000, {.forwards = false, .minSpeed = 1});
     chassis.turnToHeading(0, 800);
     moveStraight(9, 1000,{.maxSpeed = 127});
     chassis.turnToHeading(-90, 800);
     chassis.waitUntilDone();
-   // pros::delay(50);
+
     chassis.setPose(chassis.getPose().x, -(72-(get_dist_to_wall(left.get(), leftSensorConfig, chassis.getPose().theta))), chassis.getPose().theta);
     chassis.moveToPoint(-5, -54, 800, {.forwards = false});
+    //long goal score
     chassis.turnToHeading(-90, 100);
     moveStraight(-8, 2000, {.maxSpeed = 127});
 
@@ -749,6 +745,7 @@ void skills(){
     chassis.resetLocalPosition();  
     matchloader.set_value(true);
     chassis.moveToPoint(-32.5, 0, 2000, {.maxSpeed = 58});
+    //matchloader 
     chassis.waitUntilDone();
     moveStraight(1000, 1000, {.maxSpeed = 40});  
     chassis.moveToPoint(2, -0.25, 1200, {.forwards = false, .maxSpeed = 110});
@@ -756,6 +753,7 @@ void skills(){
     matchloader.set_value(false);   
     moveStraight(-8, 2000, {.maxSpeed = 127});
     top = 1;
+    //long goal score
     pros::delay(2300);
     top = 0;
     chassis.waitUntilDone();
@@ -766,16 +764,13 @@ void skills(){
     chassis.waitUntilDone();
     chassis.resetLocalPosition();
 
-    //moveStraight(3, 500, {.maxSpeed = 127, .minSpeed = 1});
+    //go to park
     chassis.moveToPose(-36, 29, 5, 2500, {.lead = 0.4,.minSpeed = 60});
 
     moveStraight(100000, 850, {.maxSpeed = 127});
     matchloader.set_value(true);
     pros::delay(800);
     matchloader.set_value(false);
- 
-    //moveStraight(200, 900, {.maxSpeed = 127});
-    //moveStraight(-100, 200, {.maxSpeed = 80});
 
     
     
