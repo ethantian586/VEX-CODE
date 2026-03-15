@@ -689,7 +689,7 @@ void skills(){
     chassis.waitUntilDone();
 
     ramp.set_value(true);
-
+    //check score task for top =4, that condition is for this middle goal
     top = 4;
     
 
